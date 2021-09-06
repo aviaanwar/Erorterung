@@ -1,0 +1,45 @@
+form {
+  /* border: 2px black solid; */
+  margin-left: 40%;
+
+  margin-right: 20%;
+}
+input,
+select {
+  margin: 10px 10px;
+  font-size: large;
+  text-align: center;
+}
+textarea {
+  margin: top;
+
+  padding-top: 5px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: sans-serif;
+  background-image: url(../img/bg3.jpg);
+  background-size: cover;
+}
+#banner p {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+#banner {
+  color: rgb(63, 21, 21);
+  padding: 8em 0 20em 0;
+  text-align: center;
+}
+
+#banner h2 {
+  font-size: 3.5em;
+  line-height: 1em;
+  font-weight: 300;
+  margin: 0 0 0.2em 0;
+  padding: 0;
+}
+/* .button {
+  margin-top: 0%;
+} */
