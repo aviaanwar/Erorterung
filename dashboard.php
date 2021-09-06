@@ -63,10 +63,11 @@ if(isset($_SESSION['mail'])){
         </button>
     </div>
     <?php if($_SESSION['type']=='admin'){
-               
-    echo "<p style='margin-left: 0%'><a href='./admin.php'>USER LIST</a></p>";
+       echo' <button type="button" class="btn btn-dark btn-lg btn-block"; style= "width:100%";> <a href="./admin.php">USER LIST</a></button>';
+       
+    // echo "<p style='margin-left: 0%'><a href='./admin.php'>USER LIST</a></p>";
     }
-    else echo"USER";
+    else echo"Hello Dear User";
     ?>
     <p style=" margin-left: 46%; font-size:28px">Hi <b
             style="font-size:34px; margin-left:5px"><?php echo ucfirst($_SESSION['name'])?></b></p>

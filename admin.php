@@ -1,3 +1,47 @@
+<?php
+include("conn.php");
+include("View/nav.php");
+session_start();
+if(isset($_SESSION['mail'])){
+
+    if($_SESSION['type']=="admin"){
+
+        $sql2="SELECT * FROM info ";
+        $result3=mysqli_query($conn, $sql2); 
+        // $data = mysqli_fetch_assoc($result3);
+        
+ 
+
+        echo "<table class='table table-striped'>";
+        echo "<tr>";
+
+        echo "<th >Name </th>";
+        echo "<th >Email</th>";
+        echo"<th> Sex</th>";
+        echo "<th>Type </th>";
+        echo "</tr>";
+        while($data =mysqli_fetch_assoc($result3)) {    
+        
+            echo "<tr>"."<td>".$data["name"]."</td>"."<td>". $data["mail"]. "</td>". "<td>".$data["sex"]."<td>".$data["type"]."</tr>";
+        }
+        echo "<table>";
+
+       
+        
+        echo "<p><a href='./dashboard.php'>Return to home</a></p>";
+    }
+    else{
+      echo  "<script type='text/javascript'>alert('You are not Admin'); window.location.href='dashboard.php'</script>";
+
+    }
+}
+        
+
+else{
+    echo "<script type='text/javascript'>alert('You have to login'); window.location.href='login.php'</script>";
+
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,40 +63,3 @@
 </body>
 
 </html>
-<?php
-include("conn.php");
-include("View/nav.php");
-session_start();
-if(isset($_SESSION['mail'])){
-
-    if($_SESSION['type']=="admin"){
-
-        $sql2="SELECT * FROM info ";
-        $result3=mysqli_query($conn, $sql2); 
-        // $data = mysqli_fetch_assoc($result3);
-        echo "<table  border=1 width=100 height=100>";
-        echo "<tr>";
-
-        echo "<th >Name </th>";
-        echo "<th >Email</th>";
-        echo "<th >Type </th>";
-        echo "</tr>";
-        while($data =mysqli_fetch_assoc($result3)) {    
-        
-            echo "<tr>"."<td>".$data["name"]."</td>"."<td>". $data["mail"]. "</td>". "<td>".$data["type"]."</tr>";
-        }
-        echo "<table>";
-        
-        echo "<p><a href='./dashboard.php'>Return to home</a></p>";
-    }
-    else{
-      echo  "<script type='text/javascript'>alert('You are not Admin'); window.location.href='dashboard.php'</script>";
-
-    }
-}
-        
-
-else{
-    echo "<script type='text/javascript'>alert('You have to login'); window.location.href='login.php'</script>";
-
-}

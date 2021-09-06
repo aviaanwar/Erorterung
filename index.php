@@ -40,7 +40,7 @@
 <body>
     <section id="banner">
         <h2>FORUM</h2>
-        <p>A Community Site for Tech Geeks of East West University</p>
+        <p>A Community Site to keep you up to Date</p>
         <ul>
             <a href="reg.php"><button class="btn btn-dark me-2 button">Register</button></a>
 

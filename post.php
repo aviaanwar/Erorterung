@@ -32,7 +32,7 @@ if(isset($_SESSION['mail'])){
     <?php
     
         $id = ((int)$_GET["postid"]);
-        echo $id;
+        // echo $id;
         $sql="SELECT * FROM `post` where post_id=$id";
         $result=mysqli_query($conn, $sql);
                     
@@ -53,7 +53,7 @@ if(isset($_SESSION['mail'])){
                 to
                 space content out within the larger container.
             </p>
-            <p><b>Posted by<?php echo "harrish"?> </b>
+            <p><b>Posted by <?php echo "Avia"?> </b>
             </p>
         </div>
         <div class="contatiner my-4">

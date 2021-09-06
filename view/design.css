@@ -40,6 +40,12 @@ body {
   margin: 0 0 0.2em 0;
   padding: 0;
 }
-/* .button {
-  margin-top: 0%;
-} */
+.container-bg {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: sans-serif;
+  background-image: url(../img/bg3.jpg);
+
+  background-size: cover;
+}

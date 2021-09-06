@@ -23,6 +23,8 @@ $get = mysqli_fetch_assoc($result2);
 
   $mail=$get['mail'];
   $_SESSION['mail']=$mail;
+  $sex=$get['sex'];
+  $_SESSION['sex']=$sex;
   $type=$get['type'];
   $_SESSION['type']=$type;
   
@@ -104,7 +106,7 @@ else {
         <input type="checkbox" id="1" name="check">
         <br>
         <label for=""> Remember me</label><br>
-        <button name="login" type="submit">Submit</button>
+        <button name="login" type="submit" class="btn btn-dark me-2 ">Submit</button>
     </form>
 
 </body>
