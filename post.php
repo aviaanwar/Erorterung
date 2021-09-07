@@ -39,6 +39,7 @@ if(isset($_SESSION['mail'])){
         $get = mysqli_fetch_assoc($result);
             $title=$get['post_titile'];//title spelling in db is titile
             $desc=$get['post_desc'];
+            $user=$get['post_user_id']
         
                     
             
@@ -46,28 +47,98 @@ if(isset($_SESSION['mail'])){
 
     <div class="container my-4">
         <div class="jumbotron" style=color:#365879>
-            <h1 class="display-4"><?php echo $title;?> </h1>
-            <p class="lead"> <?php echo $desc;?> </p>
+            <h3 class="display-4">Post </h3>
+            <h5 class="lead"> <?php echo $desc;?> </h5>
             <hr class="my-4">
             <p>This is a peer to peer forum Share your thoughts.It uses utility classes for typography and spacing
                 to
                 space content out within the larger container.
             </p>
-            <p><b>Posted by <?php echo "Avia"?> </b>
+            <p><b>Posted by <?php echo ucfirst($user)?> </b>
             </p>
         </div>
-        <div class="contatiner my-4">
-            <h2 class="py-4">Discussion</h2>
+
+        <!-- comment -->
 
 
+        <?php
+        
+        
+        $method=$_SERVER['REQUEST_METHOD'];
+        if($method=='POST'){
+            $comment=$_POST['comment'];
+           
+            $sid=$_SESSION['name'];
+        
+        
+        
+            $sql1= "INSERT INTO  comment (`comment_body`, `post_id`, `comment_by`, `comment_time`) 
+            VALUES ( '$comment', '$id', '$sid', current_timestamp())";
+            $result1=mysqli_query($conn, $sql1); 
+    
+        
+        // $get = mysqli_fetch_assoc($result1);
+    }
+    
+    
+    ?>
 
+        <div class="container">
+            <h2 class="py">
+                <font color=#824032>Share your openion</font>
 
+            </h2>
 
-
-
-
+            <form method="POST" action="<?php echo $_SERVER['REQUEST_URI']?>">
+                <!-- <div class="mb-4">
+                    <label for="example" class="form-label">Post Title</label>
+                    <input type="text" class="form-control" id="titke" aria-describedby="">
+                    <div id="title" name="title" class="form-text">keep your title short </div>
+                </div> -->
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="" id="comment" name="comment"
+                        style="height: 100px"></textarea>
+                    <label for="floatingTextarea2">
+                        <font color=#aaa>Comment here</font>
+                </div>
+                <br>
+                <button name="submit" type="submit" class="btn btn-dark">Comment</button>
+            </form>
 
         </div>
+        <!-- comment show -->
+        <div class="contatiner my-5" style="margin: left 20%;">
+            <h2 class="py-4">Discussion</h2>
+            <div class="con my-5" style="margin: right 30%;">
+
+                <?php
+                $id = ((int)$_GET["postid"]);
+            
+                $sql2="SELECT * FROM comment WHERE post_id=$id";
+                $result2=mysqli_query($conn, $sql2);
+
+                while($row = mysqli_fetch_assoc($result2)){
+
+                    $id=$row['comment_id'];
+                    $content=$row['comment_body'];
+                    echo'
+                    <div class="media my-3">
+                        <img src="img/2.jpg" width="54px" class=" mr-3" alt="...">
+                        <div class="media-body">
+                       '.$content.'
+                       <p><br>Comment by <br>'.ucfirst($sid).'</p>
+                
+                        </div>
+                    </div>
+                        ';
+                }
+             ?>
+            </div>
+        </div>
+        <!-- end comment -->
+
+
+
 
 </body>
 

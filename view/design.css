@@ -40,7 +40,7 @@ body {
   margin: 0 0 0.2em 0;
   padding: 0;
 }
-.container-bg {
+/* .container-bg {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -48,4 +48,4 @@ body {
   background-image: url(../img/bg3.jpg);
 
   background-size: cover;
-}
+} */
