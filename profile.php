@@ -46,6 +46,9 @@ if(isset($_SESSION['mail'])){
                             <div class="d-flex flex-column align-items-center text-center">
                                 <img src="img\user.png" alt="Admin" class="rounded-circle" width="150">
                                 <div class="mt-3">
+                                    <h4><?php echo ucfirst($_SESSION["type"])?></h4>
+                                </div>
+                                <div class="mt-3">
                                     <h4><?php echo ucfirst($_SESSION["name"])?></h4>
                                 </div>
                             </div>
