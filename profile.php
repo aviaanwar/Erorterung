@@ -4,7 +4,7 @@ include("view/nav.php");
 session_start();
 if(isset($_SESSION['mail'])){
     $md=$_SESSION['mail'];
-    $sql2="SELECT post_desc , create_time FROM `post` WHERE `post_user_id`='$md' ";
+    $sql2="SELECT * FROM `post` WHERE `post_user_id`='$md' ";
     $result3=mysqli_query($conn, $sql2);
     
 
@@ -39,14 +39,14 @@ if(isset($_SESSION['mail'])){
 <body>
     <div class="container">
         <div class="main-body">
-            <div class="row gutters-sm">
-                <div class="col-md-4 mb-3">
+            <div class="row ">
+                <div class="col-4 my-4">
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex flex-column align-items-center text-center">
                                 <img src="img\user.png" alt="Admin" class="rounded-circle" width="150">
                                 <div class="mt-3">
-                                    <h4><?php ucfirst($_SESSION["name"])?></h4>
+                                    <h4><?php echo ucfirst($_SESSION["name"])?></h4>
                                 </div>
                             </div>
 
@@ -72,31 +72,37 @@ if(isset($_SESSION['mail'])){
                         </div>
 
                     </div>
-                </div>
-                <div class="col-md-4 m-auto">
-                    <div class="card">
-                        <div class="list-group">
 
-                            <?php
+                    <!-- </div> -->
+                </div>
+            </div>
+
+
+        </div>
+        <!-- <div class="col-md-4 m-auto"> -->
+        <div class="card">
+            <div class="list-group">
+
+                <?php
                             echo "<table class='table table-striped'>";
                             echo "<tr>";
                         
                                 echo "<th>Post </th>";
                                 echo "<th>Create Time</th>";
+                                echo "<th>Delete</th>";
                         
                                 echo "</tr>";
                         
                             while($data =mysqli_fetch_assoc($result3)) {
-                            echo "<tr>"."<td>".$data["post_desc"]."</td>"."<td>". $data["create_time"] ;
+                            echo "<tr>"."<td>".$data["post_desc"]."</td>"."<td>". $data["create_time"]."</td>".
+                            "<td><a href='deletepost.php?pid=$data[post_id]' onclick='retuen checkdelete()'>Delete</td>".
+                            
+                            "</tr>" ;
                                     }
                         
                         
                                     echo "<table>";
                             ?>
-
-                        </div>
-                    </div>
-                </div>
 
             </div>
         </div>
@@ -115,11 +121,15 @@ if(isset($_SESSION['mail'])){
     }
 
     .main-body {
-        padding: 15px;
+        padding: 10px;
+        width: 100%;
+        margin: right 40%;
     }
 
     .card {
         box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
+
+
     }
 
     .card {
@@ -132,6 +142,16 @@ if(isset($_SESSION['mail'])){
         background-clip: border-box;
         border: 0 solid rgba(0, 0, 0, .125);
         border-radius: .25rem;
+
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: sans-serif;
+        background-image: url(./img/bg2.jpg);
+        background-size: cover;
     }
 
     .card-body {
@@ -174,4 +194,4 @@ if(isset($_SESSION['mail'])){
     </script>
 </body>
 
-</html>';
+</html>
