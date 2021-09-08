@@ -65,7 +65,7 @@
                                 if($id==$md){
                                     echo "There is no new post in this catagory";
                                 }
-                                else echo $id.$desc;
+                                else echo $id." "."<font color =#A59793 >Posted  </font>"."<br>".$desc;
 
                                 }
                                 else{
@@ -75,6 +75,7 @@
 
                                 
                             ?>
+                            
                                 </a></li>
 
                         </ul>
