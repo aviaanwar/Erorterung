@@ -19,10 +19,17 @@ if(isset($_SESSION['mail'])){
         echo "<th >Email</th>";
         echo"<th> Sex</th>";
         echo "<th>Type </th>";
+        echo "<th colspan='2'align='center'>Action</th>";
         echo "</tr>";
         while($data =mysqli_fetch_assoc($result3)) {    
         
-            echo "<tr>"."<td>".$data["name"]."</td>"."<td>". $data["mail"]. "</td>". "<td>".$data["sex"]."<td>".$data["type"]."</tr>";
+            echo "<tr>".
+            "<td>".$data["name"]."</td>".
+            "<td>". $data["mail"]. "</td>". 
+            "<td>".$data["sex"].
+            "<td>".$data["type"].
+            "<td><a href='delete.php?rn=$data[mail]' onclick='retuen checkdelete()'>Ban</td>".
+            "</tr>";
         }
         echo "<table>";
 

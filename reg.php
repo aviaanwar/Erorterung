@@ -1,31 +1,40 @@
 <?php
-session_start();
+
 include("conn.php");
 
-if(!isset($_SESSION['name'])){
+$regex='/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/'; $regex='/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/';
 
-if(isset($_POST["register"])){
-    $mail=$_POST["mail"];
-    $name=$_POST["name"];
-    $pass=$_POST["pass"];
-    $con_pass=$_POST["con_pass"];
-    $sex=$_POST["sex"];
-    $type=$_POST["type"];
+    if(isset($_POST["register"])){
+        $mail=$_POST["mail"];
+        $name=$_POST["name"];
+        $pass=$_POST["pass"];
+        $con_pass=$_POST["con_pass"];
+        $sex=$_POST["sex"];
+        $type=$_POST["type"];
 
-
-  
-  
-
+       
+        
+        if(!preg_match($regex,$mail)){
+            $error=1;
+           
+            
+        }
+            else{
+                
+            
+           
     if($pass==$con_pass){
-      $pass=md5($pass);
+        $pass=md5($pass);
 
-        $sql= "INSERT INTO info (mail,name,pass,sex, type) 
-                VALUES('$mail','$name','$pass','$sex','$type')";
-        $result1=mysqli_query($conn, $sql); 
-        echo "<script type='text/javascript'>alert('User is added'); window.location.href='login.php'</script>";
+            $sql= "INSERT INTO info (mail,name,pass,sex, type) 
+                    VALUES('$mail','$name','$pass','$sex','$type')";
+            $result1=mysqli_query($conn, $sql); 
+            echo "<script type='text/javascript'>alert('User is added'); window.location.href='login.php'</script>";
+        }
     }
-}
-}
+    }
+    
+
 
 ?>
 <!DOCTYPE html>
@@ -75,6 +84,7 @@ if(isset($_POST["register"])){
         <h1> Registration Form </h1>
         <label for="">Email :</label>
         <input type="mail" name="mail" required>
+        <?php if(isset($error)) echo  "<font color =red >Input valid Email </font>"?>
         <br>
 
         <label for="">Name :</label>

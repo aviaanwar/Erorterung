@@ -6,7 +6,7 @@ if(isset($_SESSION['mail'])){
 
     }
     else{
-        echo "<script type='text/javascript'>alert('You are logged out'); window.location.href='login.php'</script>";
+        echo "<script type='text/javascript'>alert('You are not logged in'); window.location.href='login.php'</script>";
     
     }
 
@@ -29,7 +29,7 @@ if(isset($_SESSION['mail'])){
 
 <body>
 
-    <!-- <h2 style="margin-left: 0%"> <?php echo ucfirst($_SESSION['type'])?> </h2> -->
+
     <!-- slider -->
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -65,7 +65,7 @@ if(isset($_SESSION['mail'])){
     <?php if($_SESSION['type']=='admin'){
        echo' <button type="button" class="btn btn-dark btn-lg btn-block"; style= "width:100%";> <a href="./admin.php">USER LIST</a></button>';
        
-    // echo "<p style='margin-left: 0%'><a href='./admin.php'>USER LIST</a></p>";
+
     }
     else echo"Hello Dear User";
     ?>

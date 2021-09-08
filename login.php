@@ -3,6 +3,7 @@ session_start();
 include("conn.php");
 
 if(isset($_POST["login"])){
+    
     $entr_mail=$_POST["entr_mail"];
    $entr_pass=$_POST["entr_pass"];
    $new_pass=md5($entr_pass);
@@ -28,7 +29,7 @@ $get = mysqli_fetch_assoc($result2);
   $type=$get['type'];
   $_SESSION['type']=$type;
   
-  
+
 
 //  if($get['name'])  {
 //      $name = $get['name'];
@@ -50,6 +51,7 @@ else {
 //     }
 
 }
+
 ?>
 
 <!DOCTYPE html>

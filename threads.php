@@ -113,7 +113,7 @@ if(isset($_SESSION['mail'])){
                     $desc=$row['post_desc'];
                     echo'
                     <div class="media my-3">
-                        <img src="img/2.jpg" width="54px" class=" mr-3" alt="...">
+                        <img src="img/use.jpg" width="54px" class=" mr-3" alt="...">
                         <div class="media-body">
                         <h5 class="mt-0"> <a href="post.php?postid='.$id.'">'.$desc .'</a></h5>
                 
