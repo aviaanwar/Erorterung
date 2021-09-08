@@ -1,7 +1,7 @@
 <?php
 include("conn.php");
 include("view/nav.php");
-session_start();
+// session_start();
 if(isset($_SESSION['mail'])){
 
     }

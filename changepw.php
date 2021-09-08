@@ -22,7 +22,7 @@
 <?php
 include("conn.php");
 include("View/nav.php");
-session_start();
+// session_start();
 if(isset($_SESSION['mail'])){
     
     if(isset($_POST["changepw"])){

@@ -1,7 +1,7 @@
 <?php
 include("conn.php");
 include("view/nav.php");
-session_start();
+// session_start();
 if(isset($_SESSION['mail'])){
 
     }
@@ -121,12 +121,13 @@ if(isset($_SESSION['mail'])){
 
                     $id=$row['comment_id'];
                     $content=$row['comment_body'];
+                    $by=$row['comment_by'];
                     echo'
                     <div class="media my-3">
                         <img src="img/2.jpg" width="54px" class=" mr-3" alt="...">
                         <div class="media-body">
                        '.$content.'
-                       <p><br>Comment by <br>'.ucfirst($sid).'</p>
+                       <p><br>Comment by <br>'.ucfirst($by).'</p>
                 
                         </div>
                     </div>

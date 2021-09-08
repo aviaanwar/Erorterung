@@ -1,7 +1,7 @@
 <?php
 include("conn.php");
 include("view/nav.php");
-session_start();
+// session_start();
 if(isset($_SESSION['mail'])){
 
     }
@@ -96,7 +96,7 @@ if(isset($_SESSION['mail'])){
 
         </div>
         <div class="contatiner my-8">
-            <h2 class="py-5">
+            <h2 class="py-5"style="margin-left:2%;" >
                 <font color=#824032>
                     Latest updates</font>
             </h2>
@@ -112,9 +112,9 @@ if(isset($_SESSION['mail'])){
                     $id=$row['post_id'];
                     $desc=$row['post_desc'];
                     echo'
-                    <div class="media my-3">
+                    <div class="media my-3" style="margin-left:5%;">
                         <img src="img/use.jpg" width="54px" class=" mr-3" alt="...">
-                        <div class="media-body">
+                        <div class="media-body" >
                         <h5 class="mt-0"> <a href="post.php?postid='.$id.'">'.$desc .'</a></h5>
                 
                         </div>

@@ -1,7 +1,7 @@
 <?php
 include("conn.php");
 include("View/nav.php");
-session_start();
+// session_start();
 if(isset($_SESSION['mail'])){
 
     if($_SESSION['type']=="admin"){

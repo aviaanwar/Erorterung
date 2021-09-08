@@ -1,7 +1,7 @@
 <?php
 include("conn.php");
 include("view/nav.php");
-session_start();
+// session_start();
 if(isset($_SESSION['mail'])){
     $md=$_SESSION['mail'];
     $sql2="SELECT * FROM `post` WHERE `post_user_id`='$md' ";
@@ -40,8 +40,8 @@ if(isset($_SESSION['mail'])){
     <div class="container">
         <div class="main-body">
             <div class="row ">
-                <div class="col-4 my-4">
-                    <div class="card">
+                <div class="col-4 my-4" style="margin-left:35%;">
+                    <div class="card" >
                         <div class="card-body">
                             <div class="d-flex flex-column align-items-center text-center">
                                 <img src="img\user.png" alt="Admin" class="rounded-circle" width="150">
