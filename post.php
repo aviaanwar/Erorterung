@@ -72,7 +72,7 @@ if(isset($_SESSION['mail'])){
         
         
         
-            $sql1= "INSERT INTO  comment (`comment_body`, `post_id`, `comment_by`, `comment_time`) 
+            $sql1= "INSERT INTO  cmt (`comment_body`, `post_id`, `comment_by`, `comment_time`) 
             VALUES ( '$comment', '$id', '$sid', current_timestamp())";
             $result1=mysqli_query($conn, $sql1); 
     
@@ -114,7 +114,7 @@ if(isset($_SESSION['mail'])){
                 <?php
                 $id = ((int)$_GET["postid"]);
             
-                $sql2="SELECT * FROM comment WHERE post_id=$id";
+                $sql2="SELECT * FROM cmt WHERE post_id=$id";
                 $result2=mysqli_query($conn, $sql2);
 
                 while($row = mysqli_fetch_assoc($result2)){

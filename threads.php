@@ -43,6 +43,7 @@ if(isset($_SESSION['mail'])){
             
      ?>
     <?php
+    //post input
     $id = ((int)$_GET["catid"]);
     
     $method=$_SERVER['REQUEST_METHOD'];
@@ -51,7 +52,7 @@ if(isset($_SESSION['mail'])){
          $dec=$_POST["desc"];
          $sid=$_SESSION['mail'];
     
-    
+   
        
         $sql1= "INSERT INTO post (post_titile, post_desc, post_cat_id, post_user_id, create_time) 
         VALUES ('$th', '$dec', '$id', '$sid', current_timestamp());";

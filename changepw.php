@@ -31,11 +31,11 @@ if(isset($_SESSION['mail'])){
     
         $mail=$_SESSION['mail'];
         $pass=$_SESSION['pass'];
-        echo $pass;
+        // echo $pass;
         if($old_pass==$pass)
         {
             $sql="UPDATE info set pass = '$new_pass' where mail = '$mail'";
-            // $result=mysqli_query($conn, $sql); 
+           
             $result = $conn->query($sql) or die('error');
         
             if($result){

@@ -1,6 +1,16 @@
 <html>
+    <style>
+    #img{border-radius: 80%;
+    }
+body{font-family:"Brush Script MT";
+    font-size: 40px;
+    
+}
 
-<body style="background-color: #bfcff5; color: rgb(10, 1, 146);">
+        </style>
+
+<body style="background-color: #d7dce8; color: rgb(10, 5, 4);">
+
 
     <!-- 
     <h1 style="text-align:center;text-color:white;">Meet the Developer</h1>
@@ -16,7 +26,7 @@
 
     </div>
 
-    <img id="img" src="view/1.jpg" alt="" width="150" height="150">
+    <img id="img" src="img\admin.jpg" alt="" width="150" height="150">
     <h2> Avia Anwar</h2>
 
     <button class='btn btn-outline-primary me-2 btn-lg' type='button'><a href="https://github.com/aviaanwar">Github
