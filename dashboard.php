@@ -67,7 +67,7 @@ if(isset($_SESSION['mail'])){
        
 
     }
-    else echo"Hello Dear User";
+    // else echo"Hello Dear User";
     ?>
     <p style=" margin-left: 46%; font-size:28px">Hi <b
             style="font-size:34px; margin-left:5px"><?php echo ucfirst($_SESSION['name'])?></b></p>

@@ -26,7 +26,7 @@ if(isset($_SESSION['mail'])){
 
     <title>Discussion forum</title>
 </head>
-<!-- threads=post -->
+
 
 <body>
     <?php
@@ -44,21 +44,20 @@ if(isset($_SESSION['mail'])){
                     
             
      ?>
+     <!-- show post in post page -->
 
     <div class="container my-4">
         <div class="jumbotron" style=color:#365879>
             <h3 class="display-4">Post </h3>
             <h5 class="lead"> <?php echo $desc;?> </h5>
             <hr class="my-4">
-            <p>This is a peer to peer forum Share your thoughts.It uses utility classes for typography and spacing
-                to
-                space content out within the larger container.
+            <p>This is a peer to peer forum Share your thoughts.
             </p>
             <p><b>Posted by <?php echo ucfirst($user)?> </b>
             </p>
         </div>
 
-        <!-- comment -->
+        <!-- comment input -->
 
 
         <?php

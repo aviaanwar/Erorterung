@@ -64,6 +64,7 @@ if(isset($_SESSION['mail'])){
     
     
     ?>
+    <!-- post form -->
     <div class="container my-4">
         <div class="jumbotron" style=color:#365879>
             <h1 class="display-4">Welcome to <?php echo $catname;?> Forum</h1>

@@ -19,9 +19,9 @@ body{font-family:"Brush Script MT";
         <div class="jumbotron jumbotron-fluid bg-dark text-white text-center" style="background: #aaa;"> -->
     <div class="jumbotron">
         <h1 class="display-4">Hello,User!</h1>
-        <p class="lead">We appriciate your interest in our forum</p>
+        <p class="lead">We appriciate your interest in our forum.If you have any query please feel free to contact!!!</p>
         <!-- <hr class="my-4"> -->
-        <p>If you have any query please contact</p>
+        
         <hr class="my-4">
 
     </div>
